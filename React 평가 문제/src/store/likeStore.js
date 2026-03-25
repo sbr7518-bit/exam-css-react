@@ -11,3 +11,16 @@ import { create } from "zustand";
 //                ...state.likes,
 //                [id]: (state.likes[id] || 0) + 1
 //            }
+
+
+export const useLikeStore = create((set) => ({
+  likes: {},
+
+  increase: (id) =>
+    set((state) => ({
+      likes: {
+        ...state.likes,
+        [id]: (state.likes[id] || 0) + 1,
+      },
+    })),
+}));

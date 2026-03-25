@@ -7,3 +7,10 @@ import { getUsers } from "../api/userApi";
 //  - useQuery를 사용하여 아래 API를 호출하세요.
 //      > key : ["users"]
 //      > fn : getUsers
+
+export const useUsersQuery = () => {
+  return useQuery({
+    queryKey: ["users"],
+    queryFn: getUsers,
+  });
+};

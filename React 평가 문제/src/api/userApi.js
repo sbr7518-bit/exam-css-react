@@ -6,3 +6,14 @@ import axios from "axios";
 //  - 매개변수 받지 않음
 //  - axios.get(URL)과 같이 API를 호출한 후 응답 결과를 반환합니다.
 //  - API URL : https://jsonplaceholder.typicode.com/users
+
+export const getUsers = async () => {
+  try {
+    const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+    
+    return response.data;
+  } catch (error) {
+    console.error("데이터 호출 에러:", error);
+    throw error;
+  }
+};

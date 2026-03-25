@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
 
-function Header(){
+function Header() {
     return (
-        <header style={{padding:"20px", borderBottom:"1px solid #ddd"}}>
+        <header style={{ padding: "20px", borderBottom: "1px solid #ddd" }}>
             <nav>
-                {/* 
-                    아래의 a 태그를 Link 컴포넌트로 변경하세요.
-                        - Home을 클릭하면 "/" 으로 이동합니다.
-                        - Users를 클릭하면 "/users" 으로 이동합니다.
-                */}
-                <a style={{marginRight:"20px"}}>
+                {/* 1. a 태그를 Link 컴포넌트로 변경 */}
+                {/* 2. Home을 클릭하면 "/" 으로 이동 (to 속성 사용) */}
+                <Link to="/" style={{ marginRight: "20px", textDecoration: "none", color: "black" }}>
                     Home
-                </a>
-                <a>
+                </Link>
+
+                <Link to="/users" style={{ textDecoration: "none", color: "black" }}>
                     Users
-                </a>
+                </Link>
             </nav>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
